@@ -14,7 +14,8 @@ def showdata():
             y= city['Confirmed']
             z= city['Deaths']
             a= city['Cured']
-            plt.title('Confirmed COVID DATA')
+            titles = 'Confirmed '+name+' COVID DATA '
+            plt.title(titles)
             plt.xlabel('Dates')
             plt.ylabel('Number')
             plt.plot(x, y)
