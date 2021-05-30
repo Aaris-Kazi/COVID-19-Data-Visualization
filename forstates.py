@@ -1,6 +1,7 @@
 from datetime import date, datetime
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 
 def showdata():
     name = input('Enter the State Name:\t')
