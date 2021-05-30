@@ -6,4 +6,4 @@ states = data['State']
 # print(states)
 nlist = list(dict.fromkeys(states))
 print(nlist)
-        
+print('\n', states.unique())

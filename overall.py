@@ -1,11 +1,13 @@
 from datetime import date, datetime
+from os import stat
 import matplotlib.pyplot as plt
 import pandas as pd
 
 def alldata():
     data = pd.read_csv('covid_19_india.csv')
     states = data['State']
-    nlist = list(dict.fromkeys(states))
+    # nlist = list(dict.fromkeys(states))
+    nlist = states.unique()
     try:
         kl = data[data.State == nlist[0]]
         tl = data[data.State == nlist[1]]
