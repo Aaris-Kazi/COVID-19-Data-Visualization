@@ -36,7 +36,7 @@ def alldata():
         ga = data[data.State == nlist[26]]
         am = data[data.State == nlist[28]]
         
-        plt.title('Confirmed COVID DATA')
+        plt.title('Confirmed COVID Cases DATA')
         plt.xlabel('Dates')
         plt.ylabel('Number')
         plt.plot(kl['Date'], kl['Confirmed'])
