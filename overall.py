@@ -75,4 +75,3 @@ def alldata():
     except Exception as e:
         print(e)
 
-alldata()

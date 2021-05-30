@@ -1,4 +1,5 @@
 from datetime import date, datetime
+from overall import alldata
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -31,6 +32,7 @@ def predicting():
 
 def main():
     showdata()
+    # alldata()
     # predicting()
 if __name__ == '__main__':
     main()
