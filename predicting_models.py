@@ -1,4 +1,5 @@
 from datetime import date, datetime
+from os import truncate
 from fordiff import difference
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -15,23 +16,23 @@ def predicting():
         else:
             dif, x, y =difference()
             days= []
-            confirms = []
-            # print(dif, x, y)
             y= city['Confirmed']
             for i in range(0,len(y)):
                 days.append(i)
-            # x= city['Date']
-            # print(days)
+            
             days = np.array(days)
             days = days.reshape(-1,1)
             conf = np.array(y)
-            # print(days.reshape(-1,1))
+            # print(days)
             # print(conf)
             conf = conf.reshape(-1,1)
-            # print(confirms)
             reg = LinearRegression().fit(days, conf)
             a = np.array([[476]])
             b = reg.predict(a)
             print(b)
+            plt.plot(days,conf)
+            plt.scatter(a, b)
+            plt.grid(True)
+            plt.show()
     except Exception as e:
         print(e)
