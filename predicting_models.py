@@ -21,14 +21,17 @@ def predicting():
             for i in range(0,len(y)):
                 days.append(i)
             # x= city['Date']
-            print(days)
+            # print(days)
             days = np.array(days)
+            days = days.reshape(-1,1)
+            conf = np.array(y)
             # print(days.reshape(-1,1))
-            # print(y)
+            # print(conf)
+            conf = conf.reshape(-1,1)
             # print(confirms)
-            # reg = LinearRegression().fit([days], [y])
-            # a = np.array([[476]])
-            # b = reg.predict(a)
-            # print(b)
+            reg = LinearRegression().fit(days, conf)
+            a = np.array([[476]])
+            b = reg.predict(a)
+            print(b)
     except Exception as e:
         print(e)
