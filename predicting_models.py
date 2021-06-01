@@ -1,13 +1,11 @@
-from datetime import date, datetime
-from os import truncate
 from fordiff import difference
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 def predicting():
-    # names = input('Enter the State Name:\t')
-    names = 'Maharashtra'
+    names = input('Enter the State Name:\t')
+    # names = 'Maharashtra'
     data = pd.read_csv('covid_19_india.csv')
     try:
         city = data[data.State == names]
@@ -28,12 +26,12 @@ def predicting():
             reg = LinearRegression().fit(days, conf)
             a = np.array([[437],[438],[439],[500],[550],[650], [800]])
             b = reg.predict(a)
-            print(b)
+            # print(b)
             plt.plot(days,conf)
             plt.scatter(a, b)
             lx = str(lx.date())
             ly = str(ly.date())
-            print(lx, ly)
+            # print(lx, ly)
             plt.title('Covid data between '+lx+' and '+ly)
             plt.legend(['Actual Number', 'Predicted Number'])
             plt.xlabel('Dates')
