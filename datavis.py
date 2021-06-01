@@ -1,9 +1,10 @@
 from forstates import showdata
 from overall import alldata
+from predicting_models import predicting
 def main():
-    showdata()
+    # showdata()
     # alldata()
-    # predicting()
+    predicting()
 if __name__ == '__main__':
     main()
 

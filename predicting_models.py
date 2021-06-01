@@ -1,29 +1,34 @@
 from datetime import date, datetime
+from fordiff import difference
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 def predicting():
-    name = input('Enter the State Name:\t')
+    # names = input('Enter the State Name:\t')
+    names = 'Kerala'
     data = pd.read_csv('covid_19_india.csv')
     try:
-        city = data[data.State == name]
+        city = data[data.State == names]
         if len(city) ==0:
             print('Enter the Right State Of India!')
         else:
-            datelist = []
-            x= city['Date']
+            dif, x, y =difference()
+            days= []
+            confirms = []
+            # print(dif, x, y)
             y= city['Confirmed']
-            for i in x:
-                j = datetime.strptime(i, '%Y-%m-%d')
-                # print(j.date())
-                datelist.append(j.date())
-    
-            reg = LinearRegression().fit([x], [y])
-            exampledate = datetime.strptime("2020-05-20", '%Y-%m-%d')
-                
-            a = np.array([['2020-05-20']])
-            b = reg.predict(a)
-            print(b)
+            for i in range(0,len(y)):
+                days.append(i)
+            # x= city['Date']
+            print(days)
+            days = np.array(days)
+            # print(days.reshape(-1,1))
+            # print(y)
+            # print(confirms)
+            # reg = LinearRegression().fit([days], [y])
+            # a = np.array([[476]])
+            # b = reg.predict(a)
+            # print(b)
     except Exception as e:
         print(e)
