@@ -45,6 +45,7 @@ def predicting():
             plt.xlabel('Dates')
             plt.ylabel('Number of People')
             plt.grid(True)
+            plt.savefig('plot.png', dpi=300, bbox_inches='tight')
             plt.show()
     except Exception as e:
         print(e)
